@@ -2,6 +2,7 @@
 build/
 dist/
 document/
+chroma_db/
 
 # Ignore system and IDE files
 .DS_Store
