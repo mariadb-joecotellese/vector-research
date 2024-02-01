@@ -22,14 +22,27 @@ The goal of this project is to use an LLM to "chat" with a PDF.
 
 ## Installation
 
-   poetry install
-   poetry shell
+You need to install Postgres and PGVector. There is a `docker-compose` file you can use for this.
+
+```shell
+docker-compose up -b
+```
+This will build and start the docker container with Postgres
+
+Next you need to setup your python environment
+
+```shell
+
+poetry install
+poetry shell
+
+```
 
 Then to load a PDF into the vector database
 
-   python load_pdf.py FILENAME
+`python load_pdf.py FILENAME`
 
 Then to query the PDF
 
-   python query_pdf.py "QUERY STRING"
+`python query_pdf.py "QUERY STRING"`
 
