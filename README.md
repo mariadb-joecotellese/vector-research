@@ -18,7 +18,9 @@ This is all running locally
 ## Requirements
 
 [Poetry](https://python-poetry.org/)
+
 [Ollama](https://ollama.ai)
+
 [Docker](https://www.docker.com/)
 
 ## Installation
