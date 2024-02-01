@@ -1,6 +1,6 @@
 # Vector Research
 
-Is this a basic reasearch project to better understand vector embeddings and Retrieval Augmented Generation
+This is a simple project to better understand vector embeddings and Retrieval Augmented Generation
 
 The goal of this project is to use an LLM to "chat" with a PDF.
 This is all running locally
