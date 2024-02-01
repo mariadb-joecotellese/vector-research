@@ -16,6 +16,20 @@ The goal of this project is to use an LLM to "chat" with a PDF.
 
 ## Requirements
 
-`poetry`
-[Ollama](https://)
+[Poetry](https://python-poetry.org/)
+[Ollama](https://ollama.ai)
+[Docker](https://www.docker.com/)
+
+## Installation
+
+   poetry install
+   poetry shell
+
+Then to load a PDF into the vector database
+
+   python load_pdf.py FILENAME
+
+Then to query the PDF
+
+   python query_pdf.py "QUERY STRING"
 

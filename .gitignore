@@ -3,6 +3,7 @@ build/
 dist/
 document/
 chroma_db/
+data/
 
 # Ignore system and IDE files
 .DS_Store
