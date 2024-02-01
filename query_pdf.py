@@ -23,8 +23,13 @@ def query_vectors(query: str):
 
 def query_llm(query: str, docs: list):
     model = Ollama(model="llama2")
-    prompt = ChatPromptTemplate.from_template(
-        "Answer the following {query} using the following documents: {docs}")
+    prompt = ChatPromptTemplate.from_template("""
+You are a helpful programming assistant.
+You are an expert in programming
+You will answer the following {query} programming question.
+You will use the following documents to answer the question: {docs}
+If you show code examples the should be properly formatted and indented.
+""")
     output_parser = StrOutputParser()
 
     chain = prompt | model | output_parser

@@ -15,6 +15,10 @@ This is all running locally
    2. pass it + query to LLM
    3. display the results
 
+In this example, The prompt is a programming assistant. I have used python documentation I've downloaded as a PDF.
+
+You can find examples by googling "Python reference|tutorial|guide inurl:pdf"
+
 ## Requirements
 
 [Poetry](https://python-poetry.org/)

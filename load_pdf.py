@@ -1,5 +1,6 @@
 import sys
 
+import click
 from langchain.text_splitter import TokenTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -8,8 +9,10 @@ from langchain_community.vectorstores.pgvector import PGVector
 CONNECTION_STRING = "postgresql+psycopg2://root:root@localhost:5432/doc_database"
 
 
-
-def save_pdf(filename: str):
+@click.command()
+@click.argument('filename')
+@click.option('--predelete', is_flag=False, help="Delete the collection before saving")
+def save_pdf(filename: str, predelete: bool = False):
     try:
         loader = PyPDFLoader(filename)
         print("Loading PDF")
@@ -26,7 +29,7 @@ def save_pdf(filename: str):
             documents=documents,
             collection_name="my_docs",
             connection_string=CONNECTION_STRING,
-            pre_delete_collection=False
+            pre_delete_collection=predelete
 
         )
     except ValueError as e:
@@ -35,4 +38,4 @@ def save_pdf(filename: str):
 
 
 if __name__ == "__main__":
-    save_pdf(sys.argv[1])
+    save_pdf()
