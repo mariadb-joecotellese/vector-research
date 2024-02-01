@@ -3,6 +3,7 @@
 Is this a basic reasearch project to better understand vector embeddings and Retrieval Augmented Generation
 
 The goal of this project is to use an LLM to "chat" with a PDF.
+This is all running locally
 
 1. Extract text from PDF
 2. chunk the text
@@ -22,12 +23,16 @@ The goal of this project is to use an LLM to "chat" with a PDF.
 
 ## Installation
 
+### Docker
+
 You need to install Postgres and PGVector. There is a `docker-compose` file you can use for this.
 
 ```shell
 docker-compose up -b
 ```
 This will build and start the docker container with Postgres
+
+### Python
 
 Next you need to setup your python environment
 
@@ -37,7 +42,18 @@ poetry install
 poetry shell
 
 ```
+### Ollama
 
+Ollama is a handy app that creates a local API to talk to models. 
+Install Ollama and when prompted to install the command-line tool say Yes
+
+Then from a bash shell
+
+`ollama pull llama2:7b`
+
+You can experiment with other models too.
+
+## Usage
 Then to load a PDF into the vector database
 
 `python load_pdf.py FILENAME`
